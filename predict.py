@@ -19,9 +19,9 @@ def main():
     )
 
     net = LeNet()
-    net.load_state_dict(torch.load(''))
+    net.load_state_dict(torch.load('./weights/LeNet.pth'))
 
-    img = Image.open('')
+    img = Image.open('./example/plane.jpeg')
     img = transform(img)  # [C, H, W]
     img = torch.unsqueeze(img, dim=0)  # [N, C, H, W]
 

@@ -18,12 +18,12 @@ def main():
 
     # 5000张训练图片
     # 第一次使用时需要将download设为True
-    train_set = torchvision.datasets.CIFAR10(root='./data', train=True, download=False, transform=transform)
+    train_set = torchvision.datasets.CIFAR10(root='./data', train=True, download=True, transform=transform)
     train_loader = DataLoader(train_set, batch_size=36, shuffle=True, num_workers=0)
 
     # 1000张验证图片
     # 第一次使用时需要将download设为True
-    val_set = torchvision.datasets.CIFAR10(root='./data', train=False, download=False, transform=transform)
+    val_set = torchvision.datasets.CIFAR10(root='./data', train=False, download=True, transform=transform)
     val_loader = DataLoader(val_set, batch_size=5000, shuffle=False, num_workers=0)
 
     val_data_iter = iter(val_loader)
